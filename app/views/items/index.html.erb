@@ -1,7 +1,14 @@
-<%= form_tag items_path, :method => 'get', :id => "inventory_search" do %>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Items in Inventory</h3>
+  </div>
+  <%= form_tag items_path, :method => 'get', :id => "inventory_search" do %>
   <p>
     <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Search", :name => nil %>
   </p>
-  <div id="inventory"><%= render 'items' %></div>
+  <div class="panel-body">
+    <div id="inventory"><%= render 'items' %></div>
+  </div>
 <% end %>
+</div>
